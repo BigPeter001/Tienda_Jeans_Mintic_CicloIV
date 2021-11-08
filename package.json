@@ -1,7 +1,7 @@
 {
   "name": "tienda_jeans_mintic_cicloiv",
   "version": "1.0.0",
-  "description": "\"Proyecto Mintic Ciclo IV Tienda Jeans\"\"",
+  "description": "Proyecto Mintic Ciclo IV Tienda Jeans",
   "main": "index.js",
   "scripts": {
     "build":"tsc",
