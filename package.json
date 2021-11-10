@@ -4,8 +4,8 @@
   "description": "Proyecto Mintic Ciclo IV Tienda Jeans",
   "main": "index.js",
   "scripts": {
-    "build":"tsc",
-    "start":"npm run build && node dist/app.js",
+    "build": "tsc",
+    "start": "npm run build && node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/BigPeter001/Tienda_Jeans_Mintic#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mysql": "^2.18.1",
     "typescript": "^4.4.4"
   },
   "devDependencies": {

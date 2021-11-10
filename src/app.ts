@@ -1,9 +1,35 @@
 import express, { Express } from "express";
+import usuariosRoutes from "./routes/usuarios";
 
 const  app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+usuariosRoutes(app);
+
+app.get('/prueba/:id', async(req, res) => {
+    console.log('antes de la promesa');
+    // promesas
+    const x = 10;
+    const promesa = new Promise((resolve,reject) => {
+        if (x == 10){
+            resolve('se resuelve la promea');
+        }else{
+            reject('Promesa rechazada');
+        }
+    });
+    await promesa.then((res) =>{
+        console.log(res);
+    }).catch(error => {
+        console.log(error);
+    });
+
+    console.log('despues de la promesa');
+
+    console.log(req.query);
+    console.log(req.body);
     res.send('Prueba servidor');
 })
 app.listen(port,() => {
