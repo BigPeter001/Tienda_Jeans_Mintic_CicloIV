@@ -1,8 +1,9 @@
 import express, { Express } from "express";
 import usuariosRoutes from "./routes/usuarios";
+import config from "./config/config";
 
 const  app = express();
-const port = 3000;
+const port = config.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
