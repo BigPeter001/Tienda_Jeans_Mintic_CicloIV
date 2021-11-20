@@ -1,7 +1,7 @@
 import { Router } from "express";
 import executeQuery from "../services/mysql.service";
 
-const obtenerUsuarios = async (req, res, next) => {
+const obtenerProductos = async (req, res, next) => {
     await executeQuery('SELECT * FROM usuario').then((response) => {
         const data = {
             message: 'datos encontrados..: ' + response.length,
@@ -14,7 +14,7 @@ const obtenerUsuarios = async (req, res, next) => {
    
 }
 
-const obtenerUsuario = async (req, res, next) => {
+const obtenerProducto = async (req, res, next) => {
     
     try {
         const {id} = req.params;
@@ -36,7 +36,7 @@ const obtenerUsuario = async (req, res, next) => {
     
 }
 
-const agregarUsuario = async (req, res, next) => {
+const agregarProducto = async (req, res, next) => {
     try {
         const {usuario_nombre, usuario_email,usuario_password} = req.body;
         await executeQuery("INSERT INTO usuario (usuario_nombre, usuario_email, usuario_passsword) VALUES ('" +usuario_nombre+"','"+usuario_email+"','"+usuario_password+"')").then((response) => {
@@ -58,7 +58,7 @@ const agregarUsuario = async (req, res, next) => {
     
 }
 
-const actualizarUsuario = async(req, res,next) => {
+const actualizarProducto = async(req, res,next) => {
     try {
         const {id} = req.params;
         const {usuario_nombre, usuario_email,usuario_password} = req.body;
@@ -80,7 +80,7 @@ const actualizarUsuario = async(req, res,next) => {
     
 }
 
-const eliminarUsuario = async(req, res, next) => {
+const eliminarProducto = async(req, res, next) => {
     try {
         const {id} = req.params;
         console.log(id);
@@ -101,4 +101,4 @@ const eliminarUsuario = async(req, res, next) => {
     }
 }
 
-export{ obtenerUsuarios,obtenerUsuario,agregarUsuario,actualizarUsuario,eliminarUsuario};
+export{  actualizarProducto,  agregarProducto, eliminarProducto, obtenerProducto, obtenerProductos};
